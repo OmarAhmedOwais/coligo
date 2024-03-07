@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import App from './App';
 import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <BrowserRouter>
+// Use createRoot instead of render
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// Use render instead of hydrate
+root.render(
+  <React.StrictMode>
     <App />
-  </BrowserRouter>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
+
+reportWebVitals();
