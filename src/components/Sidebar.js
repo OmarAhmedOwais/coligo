@@ -1,6 +1,6 @@
 // Sidebar.js
 import React from 'react';
-import { Drawer, List, ListItem, ListItemText, Button,Typography } from '@material-ui/core';
+import { Drawer, List, ListItem, ListItemText,Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -38,10 +38,8 @@ const Sidebar = () => {
           )
         )}
       </List>
-      <Button variant='contained' color='primary' fullWidth>
-        Start Quiz
-      </Button>
     </Drawer>
+ 
   );
 };
 

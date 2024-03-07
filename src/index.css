@@ -12,4 +12,10 @@
   /* Style the exams list */
   .exams-list {
     margin-top: 20px;
+    color: #3f51b5;
+  }
+  .exams-container{
+    margin-top: 20px;
+    color: #3f51b5;
+
   }

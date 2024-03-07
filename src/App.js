@@ -1,7 +1,7 @@
 // App.js
 import React from "react";
 import { AppBar, Toolbar, Typography,InputBase,IconButton,Badge,Button } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles,alpha } from "@material-ui/core/styles";
 import Sidebar from "../src/components/Sidebar";
 import Welcome from "../src/components/Welcome";
 import Exams from "../src/components/Exams";
@@ -13,11 +13,89 @@ const useStyles = makeStyles((theme) => ({
     width: `calc(100% - 240px)`,
     marginLeft: 240,
   },
+
+  toolbar: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+
+  logo: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "64px",
+    backgroundColor: "#f5f5f5",
+    padding: "0 16px",
+  },
+  search: {
+    position: "absolute",
+    right: 300,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    "&:hover": {
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
+    },
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: theme.spacing(3),
+      width: "auto",
+    },
+  },
+  searchIcon: {
+    padding: theme.spacing(0, 2),
+    height: "100%",
+    position: "absolute",
+    pointerEvents: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  inputRoot: {
+    color: "inherit",
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: "20ch",
+    },
+  },
+  notification: {
+    marginRight: theme.spacing(2),
+    marginLeft : theme.spacing(2),
+    position: "absolute",
+    right: 0,
+    display: "flex",
+  },
+  mailIcon: {
+    marginRight: theme.spacing(2),
+    position: "absolute",
+    right: 50,
+    display: "flex",
+  },
+  login: {
+    marginRight: theme.spacing(2),
+    position: "absolute",
+    right: 200,
+    display: "flex",
+  },
+  accountCircle: {
+    position: "absolute",
+    right: 150,
+    display: "flex",
+  },
+
 }));
+
 
 function App() {
   const classes = useStyles();
