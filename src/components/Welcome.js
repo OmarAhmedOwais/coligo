@@ -20,11 +20,10 @@ const Welcome = () => {
   return (
     <div className={classes.root}>
       <Container maxWidth="md-2">
-        <Typography variant="body1">
+        <Typography variant="body1" style={{wordWrap: "break-word"}}>
           EXAMS TIME
           <br />
           Here we are, Are you ready to fight? Don't worry, we prepared some tips to be ready for your exams.
-          <br />
           <br />
           "Nothing happens until something moves - Albert Einsten"
           <br />

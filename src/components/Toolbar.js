@@ -6,6 +6,7 @@ import { Search as SearchIcon, Notifications as NotificationsIcon, Mail as MailI
 const useStyles = makeStyles((theme) => ({
   appBar: {
     width: `calc(100% - 240px)`,
+
   },
   search: {
     position: "absolute",

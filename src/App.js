@@ -4,6 +4,7 @@ import Sidebar from "./components/Sidebar";
 import Welcome from "./components/Welcome";
 import Exams from "./components/Exams";
 import ToolBar from "./components/Toolbar";
+import { Box, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,14 +21,33 @@ function App() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Sidebar />
-      <main className={classes.content}>
+    <Box className={classes.root}>
+      <Box>
+        <Sidebar />
+      </Box>
+      <Box className={classes.content} height={"80vh"}>
         <ToolBar />
-        <Welcome />
-        <Exams />
-      </main>
-    </div>
+
+        <Box>
+          <Grid  container spacing={2}  alignItems="stretch"  >
+            <Grid item xs={8} spacing={4} >
+              <Welcome />
+            </Grid>
+          </Grid>
+        </Box>
+
+        <Box>
+          <Grid container spacing={2}>
+            <Grid item xs={8}>
+              <Exams />
+            </Grid>
+            <Grid item xs={4}>
+              <Exams />
+            </Grid>
+          </Grid>
+        </Box>
+      </Box>
+    </Box>
   );
 }
 
