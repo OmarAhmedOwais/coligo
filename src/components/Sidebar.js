@@ -1,28 +1,47 @@
+// Sidebar.js
 import React from 'react';
-import { List, ListItem, ListItemText } from '@material-ui/core';
+import { Drawer, List, ListItem, ListItemText, Button,Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  drawer: {
+    width: 240,
+    flexShrink: 0,
+  },
+  drawerPaper: {
+    width: 240,
+  },
+}));
 
 const Sidebar = () => {
+  const classes = useStyles();
+
   return (
-    <List>
-      <ListItem button>
-        <ListItemText primary="Dashboard" />
-      </ListItem>
-      <ListItem button>
-        <ListItemText primary="Schedule" />
-      </ListItem>
-      <ListItem button>
-        <ListItemText primary="Courses" />
-      </ListItem>
-      <ListItem button>
-        <ListItemText primary="Gradebook" />
-      </ListItem>
-      <ListItem button>
-        <ListItemText primary="Performance" />
-      </ListItem>
-      <ListItem button>
-        <ListItemText primary="Announcement" />
-      </ListItem>
-    </List>
+    <Drawer
+      className={classes.drawer}
+      variant='permanent'
+      classes={{
+        paper: classes.drawerPaper,
+      }}
+    >
+      <div className={classes.logo}>
+        <Typography variant='h6' noWrap>
+          Coligo
+        </Typography>
+      </div>
+      <List>
+        {["Home", "Schedule", "Courses", "Gradebook", "Performance"].map(
+          (text, index) => (
+            <ListItem button key={text}>
+              <ListItemText primary={text} />
+            </ListItem>
+          )
+        )}
+      </List>
+      <Button variant='contained' color='primary' fullWidth>
+        Start Quiz
+      </Button>
+    </Drawer>
   );
 };
 
