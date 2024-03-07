@@ -30,7 +30,7 @@ const Sidebar = () => {
         </Typography>
       </div>
       <List>
-        {["Home", "Schedule", "Courses", "Gradebook", "Performance"].map(
+        {["Home", "Schedule", "Courses", "Gradebook", "Announcement"].map(
           (text, index) => (
             <ListItem button key={text}>
               <ListItemText primary={text} />

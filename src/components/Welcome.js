@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     marginTop: theme.spacing(4),
+
   },
   title: {
     marginBottom: theme.spacing(2),
@@ -17,10 +18,7 @@ const Welcome = () => {
 
   return (
     <div className={classes.root}>
-      <Container maxWidth="md">
-        <Typography variant="h4" className={classes.title}>
-          Welcome, Talia
-        </Typography>
+      <Container maxWidth="md-2">
         <Typography variant="body1">
           EXAMS TIME
           <br />
