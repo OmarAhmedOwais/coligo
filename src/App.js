@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Sidebar from "./components/Sidebar";
 import Welcome from "./components/Welcome";
 import Exams from "./components/Exams";
-import ToolBar from "./components/Toolbar";
+import ToolBar from "./components/Navbar";
 import { Box, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
