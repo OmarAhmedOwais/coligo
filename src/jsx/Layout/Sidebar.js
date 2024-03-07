@@ -1,5 +1,4 @@
-// Sidebar.js
-import React from "react";
+import React, { useState } from "react";
 import {
   Drawer,
   List,
@@ -18,18 +17,34 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 
 const useStyles = makeStyles((theme) => ({
   drawer: { width: 240, flexShrink: 0 },
-  drawerPaper: { width: 240, backgroundColor: "#ffff"  },
+  drawerPaper: { width: 240, backgroundColor: "#ffff" },
   logo: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(6),
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
   },
-  listItem: { "&:hover": { backgroundColor:  "#6a79c8" } },
+  listItem: {
+    "&:hover": { backgroundColor: "#6a79c8" },
+    marginBottom: theme.spacing(4), // Add space between items
+    borderRadius: theme.spacing(1), // Add some border radius
+    width: "100%", // Make items take full width
+    height: theme.spacing(8), // Increase item height
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-start", // Align icon and text to the start
+  },
+  active: { backgroundColor: "#6a79c8" },
+  hover: { backgroundColor: "#6a79c8" },
 }));
 
 const Sidebar = () => {
   const classes = useStyles();
+  const [activeItem, setActiveItem] = useState("Home");
+
+  const handleItemClick = (text) => {
+    setActiveItem(text);
+  };
 
   const listItems = [
     { text: "Home", icon: <HomeIcon /> },
@@ -43,27 +58,31 @@ const Sidebar = () => {
   return (
     <Drawer
       className={classes.drawer}
-      variant='permanent'
+      variant="permanent"
       classes={{ paper: classes.drawerPaper }}
     >
-      {" "}
       <div className={classes.logo}>
-        {" "}
-        <Typography variant='h6' noWrap>
-          {" "}
-          Coligo{" "}
-        </Typography>{" "}
-      </div>{" "}
+        <Typography variant="h6" noWrap>
+          Coligo
+        </Typography>
+      </div>
       <List>
-        {" "}
         {listItems.map((item, index) => (
-          <ListItem button key={item.text} className={classes.listItem}>
-            {" "}
-            <ListItemIcon>{item.icon}</ListItemIcon>{" "}
-            <ListItemText primary={item.text} />{" "}
+          <ListItem
+            button
+            key={item.text}
+            className={
+              item.text === activeItem
+                ? classes.listItem + " " + classes.hover
+                : classes.listItem
+            }
+            onClick={() => handleItemClick(item.text)}
+          >
+            <ListItemIcon>{item.icon}</ListItemIcon>
+            <ListItemText primary={item.text} />
           </ListItem>
-        ))}{" "}
-      </List>{" "}
+        ))}
+      </List>
     </Drawer>
   );
 };

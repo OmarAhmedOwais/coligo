@@ -1,9 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Sidebar from "./components/Layout/Sidebar";
-import Welcome from "./components/Welcome";
-import Exams from "./components/Exams";
-import ToolBar from "./components/Layout/Navbar";
+import Sidebar from "./jsx/Layout/Sidebar";
+import Welcome from "./jsx/components/Welcome";
+import Exams from "./jsx/components/Exams";
+import ToolBar from "./jsx/Layout/Navbar";
 import { Box, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({

@@ -1,6 +1,6 @@
 import React from 'react';
 import { List, ListItem, ListItemText } from '@material-ui/core';
-import '../index.css';
+import '../../index.css';
 
 const Exams = () => {
   return (
