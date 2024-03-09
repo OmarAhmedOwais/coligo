@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
 
-import { IExam } from '../interfaces/exam/exam.interface';
+import { IExam } from '../types/interfaces/exam/exam.interface';
 
 const examSchema = new Schema<IExam>(
   {

@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
 
-import { IModelAnswer } from '../interfaces/exam/modelAnswer.interface';
+import { IModelAnswer } from '../types/interfaces/exam/modelAnswer.interface';
 
 // Define Model Answer Schema
 const modelAnswerSchema: Schema = new Schema<IModelAnswer>({

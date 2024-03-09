@@ -5,8 +5,8 @@ import { Model } from 'mongoose';
 import { StatusCodes } from 'http-status-codes';
 
 // Interfaces Imports
-import { IQuery } from '../interfaces/factory/factory.interface';
-import { Status } from '../interfaces/status/status.enum';
+import { IQuery } from '../types/interfaces/factory/factory.interface';
+import { Status } from '../types/interfaces/status/status.enum';
 // Utils Imports
 import ApiError from '../utils/ApiError';
 import { ApiFeatures } from '../utils/ApiFeatures';

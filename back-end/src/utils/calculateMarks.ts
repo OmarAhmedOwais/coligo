@@ -1,5 +1,5 @@
-import { IModelAnswer } from '../interfaces/exam/modelAnswer.interface';
-import { IExam, ISubsection } from '../interfaces/exam/exam.interface';
+import { IModelAnswer } from '../types/interfaces/exam/modelAnswer.interface';
+import { IExam, ISubsection } from '../types/interfaces/exam/exam.interface';
 
 // Helper function to calculate total marks based on the provided answers
 export const calculateTotalMarks = (

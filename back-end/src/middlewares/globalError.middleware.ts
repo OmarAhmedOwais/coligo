@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 
-import { Status } from '../../interfaces/status/status.enum';
+import { Status } from '../types/interfaces/status/status.enum';
 import ApiError from '../utils/ApiError';
 
 export const globalErrorMiddleware = async (

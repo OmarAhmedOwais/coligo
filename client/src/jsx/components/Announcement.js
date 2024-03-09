@@ -1,20 +1,24 @@
 import React from 'react';
 import { List, ListItem, ListItemText } from '@material-ui/core';
 import '../../index.css';
+import { useGetAllAnnouncementsQuery } from '../../api/announcements.api';
 
 const Announcements = () => {
+  const{isLoading,data,isError}=useGetAllAnnouncementsQuery()
+  if(isLoading){
+    return <div>Loading...</div>
+  }
+  if(isError){
+    return <div>Error</div>
+  }
   return (
     <div className="announcements-container">
       <List>
-        <ListItem button>
-          <ListItemText primary="Unit 1 quiz" />
+          {data.map((announcement)=>(
+        <ListItem button  key={announcement.id}>
+            <ListItemText primary={`${announcement.title} - ${announcement.date}`} />
         </ListItem>
-        <ListItem button>
-          <ListItemText primary="Unit 2 quiz" />
-        </ListItem>
-        <ListItem button>
-          <ListItemText primary="Unit 3 quiz" />
-        </ListItem>
+          ))}
       </List>
     </div>
   );

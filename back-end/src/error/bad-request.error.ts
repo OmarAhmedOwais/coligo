@@ -1,8 +1,8 @@
 import { StatusCodes } from 'http-status-codes';
 
-import { ApiError } from './api.error';
+import { ResponseStatus } from '../types/enums/response-status.enum';
 
-import { ResponseStatus } from '@/types/enums';
+import { ApiError } from './api.error';
 
 export class BadRequestError extends ApiError {
   constructor(messages: ApiError['messages'], metadata?: ApiError['metadata']) {

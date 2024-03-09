@@ -1,8 +1,9 @@
 import { StatusCodes } from 'http-status-codes';
 
-import { ApiError } from './api.error';
+import { MessageType } from '../types/enums/message-type.enum';
+import { ResponseStatus } from '../types/enums/response-status.enum';
 
-import { MessageType, ResponseStatus } from '@/types/enums';
+import { ApiError } from './api.error';
 
 export class UnauthorizedError extends ApiError {
   constructor(message: string) {

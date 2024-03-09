@@ -1,5 +1,3 @@
-import http from 'http';
-
 import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
@@ -8,7 +6,7 @@ import morgan from 'morgan';
 import { StatusCodes } from 'http-status-codes';
 import expressAsyncHandler from 'express-async-handler';
 
-import db_connection from './src/config/db_connection';
+import db_connection from './config/db_connection';
 import router from './mount';
 import 'colors';
 import { globalErrorMiddleware } from './src/middlewares/globalError.middleware';
@@ -16,7 +14,6 @@ import { rateLimitMiddleware } from './src/middlewares/rateLimit.middleware';
 import ApiError from './src/utils/ApiError';
 
 export const app = express();
-const server = http.createServer(app);
 
 const NODE_ENV = process.env.NODE_ENV || 'dev';
 
@@ -62,6 +59,6 @@ app.use(
 app.use(globalErrorMiddleware);
 
 // Start the HTTP server
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server running:  ${process.env.APP_URL}`.green.bold);
 });

@@ -1,22 +1,6 @@
 import { Document, FilterQuery, Query } from 'mongoose';
 
-import { IQuery } from '../interfaces/factory/factory.interface';
-// interface IKeywordObj {
-//   $or: ({
-//       [x: string]: {
-//           $regex: string;
-//           $options: string;
-//       };
-//       $or?: undefined;
-//   } | {
-//       $or: {
-//           [x: string]: {
-//               $regex: string;
-//               $options: string;
-//           };
-//       }[];
-//   })[];
-// }
+import { IQuery } from '../types/interfaces/factory/factory.interface';
 export class ApiFeatures<T extends Document> {
   paginationResult: {
     totalPages: number;

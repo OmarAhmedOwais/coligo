@@ -2,6 +2,8 @@ import React from "react";
 import { AppBar, Toolbar, Typography, InputBase, IconButton, Badge, Button } from "@material-ui/core";
 import { makeStyles, alpha } from "@material-ui/core/styles";
 import { Search as SearchIcon, Notifications as NotificationsIcon, Mail as MailIcon, AccountCircle } from "@material-ui/icons";
+import { useDispatch } from "react-redux";
+import { logout } from "../../utils/auth";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -76,6 +78,11 @@ const useStyles = makeStyles((theme) => ({
 
 const ToolBar=()=> {
   const classes = useStyles();
+  const dispatch = useDispatch()
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
 
   return (
     <AppBar position='absolute' className={classes.appBar}>
@@ -106,7 +113,7 @@ const ToolBar=()=> {
             <MailIcon />
           </Badge>
         </IconButton>
-        <Button color='inherit' className={classes.login}>Login</Button>
+        <Button color='inherit' className={classes.login} onClick={handleLogout}>Logout</Button>
         <IconButton edge='end' color='inherit' className={classes.accountCircle}>
           <AccountCircle />
         </IconButton>

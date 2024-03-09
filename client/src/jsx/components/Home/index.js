@@ -1,32 +1,23 @@
-import React from 'react';
-import { Button } from '@material-ui/core';
-import { Navigate } from 'react-router-dom';
-import Sidebar from '../../Sidebar';
-import Welcome from '../../Welcome';
-import Exams from '../../Exams';
-import './index.css';
+import React from "react";
+import { Button } from "@material-ui/core";
+import Welcome from "../Welcome";
+import "../../../index.css";
+import { useDispatch } from "react-redux";
+import { login } from "../../../utils/auth";
 
 const HomePage = () => {
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const dispatch = useDispatch()
 
   const handleLogin = () => {
-    setIsLoggedIn(true);
+    dispatch(login());
   };
 
-
-
-  return isLoggedIn ? (
-    <Navigate to="/dashboard" />
-  ) : (
-    <div>
-      <Sidebar />
-      <div className="welcome-message">
-        <Welcome />
-        <Button onClick={handleLogin}>Login</Button>
-      </div>
-      <Exams />
-    </div>
-  );
+  return(
+  <div>
+      <Welcome />
+      <Button onClick={handleLogin}>Login</Button>
+  </div>
+  )
 };
 
 export default HomePage;

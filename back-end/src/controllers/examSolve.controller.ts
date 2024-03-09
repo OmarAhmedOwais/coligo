@@ -4,9 +4,9 @@ import { StatusCodes } from 'http-status-codes';
 
 import { Exam } from '../models/exam.model';
 import { ModelAnswer } from '../models/modelAnswer.model';
-import { IExam } from '../interfaces/exam/exam.interface';
-import { IModelAnswer } from '../interfaces/exam/modelAnswer.interface';
-import { Status } from '../interfaces/status/status.enum';
+import { IExam } from '../types/interfaces/exam/exam.interface';
+import { IModelAnswer } from '../types/interfaces/exam/modelAnswer.interface';
+import { Status } from '../types/interfaces/status/status.enum';
 import ApiError from '../utils/ApiError';
 import { calculateTotalMarks } from '../utils/calculateMarks';
 
