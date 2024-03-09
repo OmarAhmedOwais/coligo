@@ -1,0 +1,21 @@
+/* Apply the hover styles to the sidebar links */
+.MuiListItem-button:hover {
+    background-color: white;
+    color: #3f51b5;
+  }
+  
+  /* Style the welcome message */
+  .welcome-message {
+    margin: 20px 0;
+  }
+  
+  /* Style the exams list */
+  .exams-list {
+    margin-top: 20px;
+    color: #3f51b5;
+  }
+  .exams-container{
+    margin-top: 20px;
+    color: #3f51b5;
+
+  }

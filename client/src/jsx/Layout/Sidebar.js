@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4), // Add space between items
     borderRadius: theme.spacing(1), // Add some border radius
     width: "100%", // Make items take full width
-    height: theme.spacing(8), // Increase item height
+    height: theme.spacing(6), // Increase item height
     display: "flex",
     alignItems: "center",
     justifyContent: "flex-start", // Align icon and text to the start

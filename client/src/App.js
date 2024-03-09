@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Sidebar from "./jsx/Layout/Sidebar";
 import Welcome from "./jsx/components/Welcome";
 import Exams from "./jsx/components/Exams";
+import Announcements from "./jsx/components/Announcement";
 import ToolBar from "./jsx/Layout/Navbar";
 import { Box, Grid } from "@material-ui/core";
 
@@ -39,7 +40,7 @@ function App() {
         <Box>
           <Grid container spacing={2}>
             <Grid item xs={8}>
-              <Exams />
+              <Announcements />
             </Grid>
             <Grid item xs={4}>
               <Exams />
