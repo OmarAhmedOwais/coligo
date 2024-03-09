@@ -47,7 +47,7 @@ const Sidebar = () => {
   };
 
   const listItems = [
-    { text: "Home", icon: <HomeIcon /> },
+    { text: "Dashboard", icon: <HomeIcon /> },
     { text: "Schedule", icon: <ScheduleIcon /> },
     { text: "Courses", icon: <SchoolIcon /> },
     { text: "Gradebook", icon: <GradesIcon /> },

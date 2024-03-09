@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, ListItem, ListItemText } from '@material-ui/core';
+import { Avatar, List, ListItem, ListItemAvatar, ListItemText } from '@material-ui/core';
 import '../../index.css';
 import { useGetAllAnnouncementsQuery } from '../../api/announcements.api';
 
@@ -12,13 +12,20 @@ const Announcements = () => {
     return <div>Error</div>
   }
   return (
-    <div className="announcements-container">
+    <div className="exams-container">
       <List>
-          {data.map((announcement)=>(
-        <ListItem button  key={announcement.id}>
-            <ListItemText primary={`${announcement.title} - ${announcement.date}`} />
-        </ListItem>
-          ))}
+        {data.data.map((announcement, index) => (
+          <ListItem button key={index}>
+            <ListItemAvatar>
+              <Avatar alt={announcement.user.name} src={announcement.user.image} />
+            </ListItemAvatar>
+            <ListItemText
+              primary={`${announcement.user.name} - ${announcement.title}`}
+              secondary={`Course: ${announcement.user.courseName}, Department: ${announcement.user.department}`}
+            />
+            <ListItemText primary={`Content: ${announcement.content}`} />
+          </ListItem>
+        ))}
       </List>
     </div>
   );
